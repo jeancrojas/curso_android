@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "290174623343",
+    "project_id": "firebase-analyticsejemplo"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290174623343:android:1492b04e2684a4de",
+        "android_client_info": {
+          "package_name": "com.novillo.analyticsejemplo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQwBkjaMrbvne0J99uO4Szw9Jgecj5qHs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-89696348-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

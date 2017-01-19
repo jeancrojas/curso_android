@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Spinner</string>
+
+    <string-array name="Tipos">
+        <item>Furgoneta</item>
+        <item>Coche</item>
+        <item>Moto</item>
+    </string-array>
+</resources>

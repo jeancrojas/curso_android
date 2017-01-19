@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jesus.a02login.Main2Activity">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/apellidos"
+        android:ems="10"
+        android:id="@+id/editTextApellidos"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/editTextNombre"
+        android:layout_alignLeft="@+id/editTextNombre"
+        android:layout_alignStart="@+id/editTextNombre" />
+
+    <RadioButton
+        android:text="@string/señora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonSeñora"
+        android:layout_weight="1"
+        android:layout_alignBottom="@+id/imageViewFoto"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <RadioButton
+        android:text="@string/señor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonSeñor"
+        android:layout_weight="1"
+        android:layout_alignBaseline="@+id/radioButtonSeñora"
+        android:layout_alignBottom="@+id/radioButtonSeñora"
+        android:layout_toRightOf="@+id/radioButtonSeñora"
+        android:layout_toEndOf="@+id/radioButtonSeñora"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editTextDireccion"
+        android:text="@string/direccion"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/editTextApellidos"
+        android:layout_alignLeft="@+id/editTextApellidos"
+        android:layout_alignStart="@+id/editTextApellidos" />
+
+    <TextView
+        android:text="@string/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewNombre"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/buttonFoto"
+        android:layout_alignLeft="@+id/textViewDireccion"
+        android:layout_alignStart="@+id/textViewDireccion" />
+
+    <TextView
+        android:text="@string/apellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginStart="78dp"
+        android:layout_alignBaseline="@+id/editTextApellidos"
+        android:layout_alignBottom="@+id/editTextApellidos"
+        android:layout_toRightOf="@+id/radioGroup2"
+        android:layout_toEndOf="@+id/radioGroup2" />
+
+    <Button
+        android:text="@string/foto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonFoto"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/imageViewFoto"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
+
+    <TextView
+        android:text="@string/direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDireccion"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/editTextDireccion"
+        android:layout_alignBottom="@+id/editTextDireccion"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/nombre"
+        android:ems="10"
+        android:id="@+id/editTextNombre"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignBaseline="@+id/textViewNombre"
+        android:layout_alignBottom="@+id/textViewNombre"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDireccion"
+        android:layout_alignLeft="@+id/radioButtonSeñor"
+        android:layout_alignStart="@+id/radioButtonSeñor"
+        android:id="@+id/buttonRegistrar" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imageViewFoto"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/buttonFoto"
+        android:layout_alignEnd="@+id/buttonFoto" />
+</RelativeLayout>

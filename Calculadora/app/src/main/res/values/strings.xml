@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="max_superado">Número máximo de dígitos superado</string>
+</resources>

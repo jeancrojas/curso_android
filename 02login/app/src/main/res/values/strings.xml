@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">a02login</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="cliente">Cliente</string>
+    <string name="empleado">Empleado</string>
+    <string name="foto">Foto</string>
+    <string name="señor">Sr.</string>
+    <string name="señora">Sra.</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="direccion">Dirección</string>
+    <string name="errorLogin">Empleado no registrado</string>
+    <string name="registrar">Registrar</string>
+</resources>

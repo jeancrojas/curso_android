@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CorreoElectronico</string>
+    <string name="subject">Informacion del evento </string>
+    <string name="mail">Este es un mail de prueba aqui iría todo el cuerpo del correo electronico...</string>
+</resources>

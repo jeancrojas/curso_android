@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Aplicacion02Login</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="Cliente">Cliente</string>
+    <string name="Empleado">Empleado</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Aplicacion1 Login</string>
+    <string name="usuario">user</string>
+    <string name="contraseña">password</string>
+    <string name="correcto">Acceso permitido</string>
+    <string name="incorrecto">Acceso denegado</string>
+</resources>

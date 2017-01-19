@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tiempo_prueba</string>
+    <string-array name="Ciudades">
+        <item>Madrid</item>
+        <item>Málaga</item>
+        <item>Toledo</item>
+        <item>Segovia</item>
+        <item>Avila</item>
+        <item>Cuenca</item>
+        <item>Sevilla</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

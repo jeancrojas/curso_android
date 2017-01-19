@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jesus.a02login.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="@string/contraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textViewContraseña"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/editTextUsuario"
+        android:layout_toLeftOf="@+id/editTextContraseña"
+        android:layout_toStartOf="@+id/editTextContraseña"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario"
+        android:id="@+id/textViewUsuario"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_alignBaseline="@+id/editTextUsuario"
+        android:layout_alignBottom="@+id/editTextUsuario"
+        android:layout_alignRight="@+id/textViewContraseña"
+        android:layout_alignEnd="@+id/textViewContraseña" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/usuario"
+        android:ems="10"
+        android:id="@+id/editTextUsuario"
+        android:layout_marginTop="17dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/buttonCliente"
+        android:layout_toEndOf="@+id/buttonCliente" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editTextContraseña"
+        android:text="@string/contraseña"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignBaseline="@+id/textViewContraseña"
+        android:layout_alignBottom="@+id/textViewContraseña"
+        android:layout_toRightOf="@+id/buttonCliente"
+        android:layout_toEndOf="@+id/buttonCliente"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp" />
+
+    <Button
+        android:text="@string/cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:id="@+id/buttonCliente"
+        android:layout_marginLeft="49dp"
+        android:layout_marginStart="49dp"
+        android:layout_below="@+id/editTextContraseña"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/empleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:id="@+id/buttonEmpleado"
+        android:layout_alignBaseline="@+id/buttonCliente"
+        android:layout_alignBottom="@+id/buttonCliente"
+        android:layout_alignLeft="@+id/editTextContraseña"
+        android:layout_alignStart="@+id/editTextContraseña" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonCliente"
+        android:layout_toRightOf="@+id/textViewUsuario"
+        android:layout_toEndOf="@+id/textViewUsuario"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textViewErrorLogin" />
+</RelativeLayout>

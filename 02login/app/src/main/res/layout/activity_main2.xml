@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jesus.a02login.Main2Activity">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <RadioButton
+        android:text="@string/señor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonSeñor"
+        android:layout_marginTop="28dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/radioGroup"
+        android:layout_toRightOf="@+id/radioButtonSeñora"
+        android:layout_toEndOf="@+id/radioButtonSeñora" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imageViewFoto"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_toRightOf="@+id/radioGroup"
+        android:layout_toEndOf="@+id/radioGroup" />
+
+    <RadioButton
+        android:text="@string/señora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonSeñora"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:layout_weight="1"
+        android:layout_alignBaseline="@+id/radioButtonSeñor"
+        android:layout_alignBottom="@+id/radioButtonSeñor"
+        android:layout_toRightOf="@+id/buttonFoto"
+        android:layout_toEndOf="@+id/buttonFoto" />
+
+    <Button
+        android:text="@string/foto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonFoto"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_below="@+id/radioButtonSeñora"
+        android:layout_toRightOf="@+id/radioGroup"
+        android:layout_toEndOf="@+id/radioGroup" />
+
+    <TextView
+        android:text="@string/apellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewNombre"
+        android:layout_alignLeft="@+id/textViewNombre"
+        android:layout_alignStart="@+id/textViewNombre"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@string/direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_marginTop="24dp"
+        android:id="@+id/textViewDireccion"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="@string/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:id="@+id/textViewNombre"
+        android:layout_below="@+id/buttonFoto"
+        android:layout_alignRight="@+id/imageViewFoto"
+        android:layout_alignEnd="@+id/imageViewFoto"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/apellidos"
+        android:ems="10"
+        android:id="@+id/editTextApellidos"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/editTextNombre"
+        android:layout_alignLeft="@+id/editTextNombre"
+        android:layout_alignStart="@+id/editTextNombre" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/textViewDireccion"
+        android:layout_alignLeft="@+id/textViewDireccion"
+        android:layout_alignStart="@+id/textViewDireccion"
+        android:layout_marginTop="13dp"
+        android:id="@+id/editTextDireccion"
+        android:text="@string/direccion"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/nombre"
+        android:ems="10"
+        android:id="@+id/editTextNombre"
+        android:textSize="14sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignBaseline="@+id/textViewNombre"
+        android:layout_alignBottom="@+id/textViewNombre"
+        android:layout_toRightOf="@+id/buttonFoto"
+        android:layout_toEndOf="@+id/buttonFoto" />
+
+    <Button
+        android:text="@string/registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonRegistrar"
+        android:layout_below="@+id/editTextDireccion"
+        android:layout_toLeftOf="@+id/radioButtonSeñor"
+        android:layout_toStartOf="@+id/radioButtonSeñor"
+        android:layout_marginTop="24dp" />
+</RelativeLayout>

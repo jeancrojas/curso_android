@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplicacion1 Login</string>
+    <string name="contraseña">contraseña</string>
+    <string name="usuario">usuario</string>
+</resources>

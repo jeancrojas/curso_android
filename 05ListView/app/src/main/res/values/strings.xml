@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">05ListView</string>
+    <string-array name="dias">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+        <item>Jueves</item>
+        <item>Viernes</item>
+        <item>Sabado</item>
+        <item>Domingo</item>
+    </string-array>
+</resources>

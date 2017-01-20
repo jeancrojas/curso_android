@@ -10,11 +10,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="es.cice.newactivityintent.MainActivity">
 
+
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "new Activity"
+        android:text = "Mensaje"
         android:layout_centerInParent="true"
         android:onClick="startNewActivity"
         />
@@ -23,9 +24,28 @@
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Implicit Intent"
+        android:text="Web MIT"
         android:onClick="launchImplicitIntent"
         android:layout_below="@+id/btn1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp" />
+        android:layout_marginTop="37dp"
+        />
+
+    <Button
+        android:id="@+id/implicitHTTPIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implicit HTTP + MIME Intent"
+        android:onClick="launchImplicitHTTPMimeIntent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp" />
+
+    <Button
+        android:id="@+id/implicitGEOIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implicit GEO Intent"
+        android:onClick="launchImplicitGEOIntent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp" />
 </RelativeLayout>

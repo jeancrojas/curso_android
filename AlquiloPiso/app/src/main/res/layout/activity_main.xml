@@ -34,15 +34,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button1"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"/>
 
     <TextView
         android:text="Recuerda activar el GPS"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FD8469"
-
+        android:layout_gravity="center"
         android:id="@+id/textView"
         android:textSize="18sp" />
 </LinearLayout>

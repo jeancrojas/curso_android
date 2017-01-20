@@ -11,7 +11,9 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <!--Añadido-->
+                <data android:mimeType="application/pdf"></data>
+                <!--Añadido - Fin -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

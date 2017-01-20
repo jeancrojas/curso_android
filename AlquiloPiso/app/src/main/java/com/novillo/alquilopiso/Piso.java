@@ -1,10 +1,13 @@
 package com.novillo.alquilopiso;
 
+import com.google.android.gms.maps.model.Marker;
+
 /**
  * Created by Jesus on 14/01/2017.
  */
 
 public class Piso {
+
     private String direccion;
     private double lat;
     private double lng;
@@ -18,9 +21,12 @@ public class Piso {
     private String foto3;
     private String foto4;
     private String foto5;
+    private String id;
+    private Marker marker;
 
     public Piso(String direccion, double lat, double lng, String metros, String habitaciones, String baños, String precio,
-                String telefono, String foto1, String foto2, String foto3, String foto4, String foto5) {
+                String telefono, String foto1, String foto2, String foto3, String foto4, String foto5, String id) {
+        this.id = id;
         this.direccion = direccion;
         this.lat = lat;
         this.lng = lng;
@@ -34,11 +40,13 @@ public class Piso {
         this.foto3 = foto3;
         this.foto4 = foto4;
         this.foto5 = foto5;
+        this.marker = null;
     }
 
     ////////// SOBRECARGADO PARA PROBAR SIN FOTOS//////////
-    public Piso(String direccion, double lat, double lng, String metros, String habitaciones, String baños, String precio,
-                String telefono) {
+    public Piso( String direccion, double lat, double lng, String metros, String habitaciones, String baños, String precio,
+                String telefono, String id) {
+        this.id = id;
         this.direccion = direccion;
         this.lat = lat;
         this.lng = lng;
@@ -48,6 +56,10 @@ public class Piso {
         this.precio = precio;
         this.telefono = telefono;
     }
+
+    public String getId() { return id;}
+
+    public void setId(String id) { this.id = id;}
 
     public String getDireccion() {
         return direccion;
@@ -146,4 +158,8 @@ public class Piso {
     public void setFoto5(String foto5) {
         this.foto5 = foto5;
     }
+
+    public Marker getMarker() { return marker; }
+
+    public void setMarker(Marker marker) { this.marker = marker; }
 }

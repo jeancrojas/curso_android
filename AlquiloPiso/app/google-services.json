@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "894008069549",
+    "project_id": "alquilopiso-155513"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894008069549:android:028a8e456aa2f2cf",
+        "android_client_info": {
+          "package_name": "com.novillo.alquilopiso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuyqCkEWWZhBn-D_4cKs59N5WVYLfscno"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-89696348-2"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

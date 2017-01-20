@@ -27,4 +27,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void launchImplicitGEOIntent (View v) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:0,0?" + "q=Cuatro+Caminos"));
+        startActivity(intent);
+    }
+
+    public void launchImplicitHTTPMimeIntent (View v) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData ( Uri.parse(""+"https://ae01.alicdn.com/kf/HTB1HSsGIXXXXXbUXVXXq6xXFXXX4/3pcs-lot-Super-font-b-Mario-b-font-font-b-Bros-b-font-Luigi-font-b.jpg") );
+        intent.setType("image/jpeg");
+        startActivity(intent);
+    }
+
 }

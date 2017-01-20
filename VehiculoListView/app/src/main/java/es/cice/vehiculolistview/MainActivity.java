@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 //Añadido
                 Intent intent = new Intent(MainActivity.this, ActivityCoche.class);
 
-                String datos = "Fabricante: "+list.get(i).getFabricante()+"\nModelo: "+ list.get(i).getModelo() + "\nDescripcion: "+list.get(i).getDescripcion();
+                String datos = "Fabricante: "+list.get(i).getFabricante()+"\nModelo: "+
+                        list.get(i).getModelo() + "\nDescripcion: "+list.get(i).getDescripcion();
                 intent.putExtra(ActivityCoche.EXTRA_DATOS, v.toString() );
                 startActivity(intent);
 

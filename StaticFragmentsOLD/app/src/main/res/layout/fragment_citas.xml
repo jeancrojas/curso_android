@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.cice.staticfragments.fragments.CitasFragment">
+
+    <TextView
+        android:id="@+id/citasTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/citasCitaTextView"
+        android:layout_below="@+id/citasTitleTextView"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:textAppearanceMedium"/>
+
+</FrameLayout>

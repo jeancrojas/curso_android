@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StaticFragments</string>
+    <string-array name="titles">
+        <item>Hamlet, principe de Dinamarca</item>
+        <item>Romeo y Julieta</item>
+        <item>Ricardo III</item>
+        <item>Julio Cesar</item>
+    </string-array>
+    <string-array name="citas">
+        <item>A todos presta oídos; tu voz, a pocos. Escucha el juicio de todos y guárdate el tuyo</item>
+        <item>El amor corre al amor como el colegial huye del libro y como el que va a clase se aparta de el con cara triste</item>
+        <item>En este mundo tan aficionado a las citas y las frases famosas, el nombre de William Shakespeare tiene un nivel de prestigio</item>
+        <item>¡El mal que hacen los hombres les sobrevive! ¡El bien queda frecuentemente enterrado con sus huesos! ¡Sea así con César! El noble Bruto os ha dicho que César era ambicioso</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -68,21 +68,15 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         View row = inflater.inflate(R.layout.row_car, parent , false);
         ViewHolder holder= new ViewHolder(row);
 
-        holder.carIV.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         return holder;
     }
 
 
     @Override
-    public void onBindViewHolder (ViewHolder holder, int position) {
+    public void onBindViewHolder (CarAdapter.ViewHolder holder, int position) {
         holder.carIV.setImageResource(carList.get(position).getMiniatura());
-        holder.carTV.setText(carList.get(position).getFabricante() + " " + carList.get(position).getModelo());
+        holder.carTV.setText(carList.get(position).getFabricante() + " " +
+                carList.get(position).getModelo());
 
     }
 
@@ -107,7 +101,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
                 public void onClick(View v) {
                     Log.d("CarViewHolder","old position: "+getOldPosition());
                     Log.d("CarViewHolder", "layout position: "+getOldPosition());
-                    Log.d("CarViewHolder", "adapter position: "+getOldPosition());
+                    Log.d("CarViewHolder", "adapter position: "+getAdapterPosition());
 
                     Intent intent = new Intent(ctx,CarDetailActivity.class );
 
@@ -116,7 +110,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
                     intent.putExtra(CarDetailActivity.MAKER_EXTRA, carList.get(getAdapterPosition()).getFabricante() );
                     intent.putExtra(CarDetailActivity.MODEL_EXTRA, carList.get(getAdapterPosition()).getModelo() );
 
-                    ctx.
+                    ctx.startActivity(intent);
 
                 }
             });

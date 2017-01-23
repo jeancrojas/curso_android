@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StaticFragments</string>
+    <string-array name="titles">
+        <item>primero</item>
+        <item>segundo</item>
+        <item>tercero</item>
+        <item>cuarto</item>
+    </string-array>
+    <string-array name="citas">
+        <item>lorem ipsum  primero</item>
+        <item>lorem ipsum  segundo</item>
+        <item>lorem ipsum  tercero</item>
+        <item>lorem ipsum  cuarto</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

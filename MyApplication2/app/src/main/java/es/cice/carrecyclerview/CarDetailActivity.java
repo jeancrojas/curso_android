@@ -29,7 +29,8 @@ public class CarDetailActivity extends AppCompatActivity {
 
         if ( imageResource != 0 ) {
             carImage.setImageResource(imageResource);
-            carDescription.setText("Fabricante: "+fabricante+"\nModelo: "+modelo+"\nDescripcion: "+descripcion);
+            carDescription.setText("Fabricante: "+fabricante+"\nModelo: "+
+                    modelo+"\nDescripcion: "+descripcion);
         }
 
     }

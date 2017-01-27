@@ -59,7 +59,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> impl
 
     @Override
     public Filter getFilter() {
-        return null;
+        return new CarFilter();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -117,6 +117,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> impl
                 }
             }
             resulsts.values = filteredList;
+
             resulsts.count = filteredList.size();
 
             return resulsts;

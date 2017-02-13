@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="es.cice.proyectofinalthemoviedatabase.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:id="@+id/textViewTitulo"
+        android:textSize="24sp"
+        android:background="@android:color/holo_blue_dark"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSubtitulos"
+        android:layout_below="@+id/textViewTitulo"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark">
+        <TextView
+            android:id="@+id/textViewSubtituloPopular"
+            android:layout_height="wrap_content"
+            android:text="@string/subtituloPopular"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:textSize="10sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/textViewSubtituloMejorValoradas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtituloMejorValoradas"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/textViewSubtituloProximamente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtituloProximamente"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/textViewSubtituloEnCarteleraHoy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtituloEnCarteleraHoy"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:textStyle="normal|bold" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewLista"
+        android:layout_below="@+id/linearLayoutSubtitulos"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+</RelativeLayout>

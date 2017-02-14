@@ -40,7 +40,7 @@ public class ListaPeliculas extends BaseAdapter{
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return pelicula.get(position).getId();
     }
 
     @Override
@@ -53,7 +53,11 @@ public class ListaPeliculas extends BaseAdapter{
         TextView textViewDescripcion = (TextView) vista_elemento.findViewById(R.id.textViewDescripcion);
 
         imageViewImagen.setImageBitmap(pelicula.get(position).getImage());
-        textViewDescripcion.setText(pelicula.get(position).toString());
+        textViewDescripcion.setText(
+                pelicula.get(position).getTitle()
+                        +"\n"+pelicula.get(position).getVote_average()
+                        +"\n"+pelicula.get(position).getRelease_date()
+                );
 
 
         return vista_elemento;

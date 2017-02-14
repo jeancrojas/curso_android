@@ -2,6 +2,7 @@ package es.cice.proyectofinalthemoviedatabase;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,21 +66,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         listViewLista = (ListView) findViewById(R.id.listViewLista);
 
+
         slowWorkerThread.start();
-        listaPeliculas = new ListaPeliculas(this, pelicula);
-        listViewLista.setAdapter(listaPeliculas);
+
+        try {
+            slowWorkerThread.join();
+            listaPeliculas = new ListaPeliculas(this, pelicula);
+            listViewLista.setAdapter(listaPeliculas);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
     @Override
     public void onClick(View v) {
+        String url;
 
         if ( v ==  textViewSubtituloPopular ) {
-            //Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+            url = Pelicula.POPULAR;
         }
 
         if ( v ==  textViewSubtituloMejorValoradas ) {
-            //Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+
         }
 
         if ( v ==  textViewSubtituloProximamente ) {
@@ -88,18 +100,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if ( v ==  textViewSubtituloEnCarteleraHoy ) {
             //Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+            url = Pelicula.EN_CARTELERA_HOY;
         }
 
     }
 
     Thread slowWorkerThread = new Thread() {
 
+
+
         @Override
         public void run() {
             super.run();
             try {
-                URL url =
-                        new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57");
+                URL url = new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES");
+                //        new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57");
+
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
                 StringBuffer data = new StringBuffer();
                 String line = "";
@@ -125,11 +141,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     pelicula.add(new Pelicula(id, image, release_date,original_title,vote_average));
                 }
 
-                /*
+
                 for (Pelicula p : pelicula) {
                     Log.d(TAG, "slowWorkerThread... "+p.toString());
                 }
-                */
+
 
 
 

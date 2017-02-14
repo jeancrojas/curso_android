@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Test</title>
+	<script type="text/javascript">
+		function showAndroidDialog(message){
+
+			Android.showDialog(message);		}
+
+	</script>
+</head>
+<body>
+	<form>
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" />
+		<br />
+		<label for="correo">Correo:</label>
+		<input id="correo" type="email">
+		<br />
+		<input type="button" onclick="showAndroidDialog('Datos recibidos:')" value="Enviar">
+
+	</form>
+	
+</body>
+</html>

@@ -8,6 +8,9 @@ import android.graphics.Bitmap;
 
 public class Pelicula {
     public static final String BASE_URL_IMAGE = "https://image.tmdb.org/t/p/w500";
+    public static final String POPULAR = "https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES";
+    public static final String EN_CARTELERA_HOY ="https://api.themoviedb.org/3/movie/now_playing?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES";
+
     int id;
     String original_title;
     Bitmap image;

@@ -2,6 +2,7 @@ package es.cice.proyectofinalthemoviedatabase;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,11 +41,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     static final String TAG = "MainActivity";
 
+
     TextView textViewSubtituloPopular, textViewSubtituloMejorValoradas, textViewSubtituloProximamente, textViewSubtituloEnCarteleraHoy;
     ListView listViewLista;
     Gson gson;
     List<Pelicula> pelicula;
     ListaPeliculas listaPeliculas;
+    TextView anterior = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,45 +70,105 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         listViewLista = (ListView) findViewById(R.id.listViewLista);
 
+        anterior = textViewSubtituloPopular;
 
-        slowWorkerThread.start();
-
-        try {
-            slowWorkerThread.join();
-            listaPeliculas = new ListaPeliculas(this, pelicula);
-            listViewLista.setAdapter(listaPeliculas);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        onClick(textViewSubtituloPopular);
 
     }
 
     @Override
     public void onClick(View v) {
-        String url;
+        //View Tratado con anterioridad
 
-        if ( v ==  textViewSubtituloPopular ) {
-            Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
-            url = Pelicula.POPULAR;
+
+        if ( v ==  textViewSubtituloPopular && textViewSubtituloPopular.getCurrentTextColor() != Integer.parseInt("-256") ) {
+            Snackbar.make(v, "Popular", Snackbar.LENGTH_SHORT).show();
+
+            estiloTextView(textViewSubtituloPopular);
+
+
+            HiloPeliculas hiloPopular = new HiloPeliculas(Pelicula.POPULAR);
+            hiloPopular.start();
+            try {
+                hiloPopular.join();
+                listaPeliculas = new ListaPeliculas(this, hiloPopular.getPelicula());
+                listViewLista.setAdapter(listaPeliculas);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
         }
 
-        if ( v ==  textViewSubtituloMejorValoradas ) {
-            Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+        if ( v ==  textViewSubtituloMejorValoradas && textViewSubtituloMejorValoradas.getCurrentTextColor() != Integer.parseInt("-256") ) {
+            Log.d(TAG, "El color es Mejor Valoradas: "+textViewSubtituloMejorValoradas.getCurrentTextColor() );
+            Snackbar.make(v, "Mejor Valoradas", Snackbar.LENGTH_SHORT).show();
+
+            estiloTextView(textViewSubtituloMejorValoradas);
+
+
+            HiloPeliculas hiloMejorValoradas = new HiloPeliculas(Pelicula.MEJOR_VALORADAS);
+            hiloMejorValoradas.start();
+            try {
+                hiloMejorValoradas.join();
+                listaPeliculas = new ListaPeliculas(this, hiloMejorValoradas.getPelicula());
+                listViewLista.setAdapter(listaPeliculas);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
 
-        if ( v ==  textViewSubtituloProximamente ) {
-            //Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
+        if ( v ==  textViewSubtituloProximamente && textViewSubtituloProximamente.getCurrentTextColor() != Integer.parseInt("-256") ) {
+            Snackbar.make(v, "Proximamente", Snackbar.LENGTH_SHORT).show();
+
+            estiloTextView(textViewSubtituloProximamente);
+
+            HiloPeliculas hiloProximamente = new HiloPeliculas(Pelicula.PROXIMAMENTE);
+            hiloProximamente.start();
+            try {
+                hiloProximamente.join();
+                listaPeliculas = new ListaPeliculas(this, hiloProximamente.getPelicula());
+                listViewLista.setAdapter(listaPeliculas);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
-        if ( v ==  textViewSubtituloEnCarteleraHoy ) {
-            //Snackbar.make(v, "Estas en Popular", Snackbar.LENGTH_SHORT).show();
-            url = Pelicula.EN_CARTELERA_HOY;
+        if ( v ==  textViewSubtituloEnCarteleraHoy && textViewSubtituloEnCarteleraHoy.getCurrentTextColor() != Integer.parseInt("-256")) {
+            Snackbar.make(v, "Cartelera Hoy", Snackbar.LENGTH_SHORT).show();
+
+            estiloTextView(textViewSubtituloEnCarteleraHoy);
+
+            HiloPeliculas hiloEnCarteleraHoy = new HiloPeliculas(Pelicula.EN_CARTELERA_HOY);
+            hiloEnCarteleraHoy.start();
+            try {
+                hiloEnCarteleraHoy.join();
+                listaPeliculas = new ListaPeliculas(this, hiloEnCarteleraHoy.getPelicula());
+                listViewLista.setAdapter(listaPeliculas);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
 
+    public void estiloTextView (TextView actual){
+        actual.setTextColor(Color.YELLOW);
+        actual.setBackground(getResources().getDrawable(R.drawable.back));
+
+
+        if ( actual != anterior ) {
+            anterior.setTextColor(Color.WHITE);
+            anterior.setBackground(getResources().getDrawable(R.drawable.border_white));
+            anterior = actual;
+        }
+
+
+    }
+
+    /*
     Thread slowWorkerThread = new Thread() {
 
 
@@ -113,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void run() {
             super.run();
             try {
-                URL url = new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES");
+                //url = new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES");
                 //        new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57");
 
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -160,4 +224,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     };
+    */
 }

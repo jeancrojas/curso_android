@@ -50,12 +50,13 @@ public class ListaPeliculas extends BaseAdapter{
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         vista_elemento = layoutInflater.inflate(R.layout.lista_peliculas, parent, false);
         ImageView imageViewImagen = (ImageView) vista_elemento.findViewById(R.id.imageViewImagen);
-        TextView textViewDescripcion = (TextView) vista_elemento.findViewById(R.id.textViewDescripcion);
+        TextView textViewPeliculaTitulo = (TextView) vista_elemento.findViewById(R.id.textViewPeliculaTitulo);
+        TextView textViewPeliculaDescripcion = (TextView) vista_elemento.findViewById(R.id.textViewPeliculaDescripcion);
 
         imageViewImagen.setImageBitmap(pelicula.get(position).getImage());
-        textViewDescripcion.setText(
-                pelicula.get(position).getTitle()
-                        +"\n"+pelicula.get(position).getVote_average()
+        textViewPeliculaTitulo.setText(pelicula.get(position).getTitle());
+        textViewPeliculaDescripcion.setText(
+                        pelicula.get(position).getVote_average()
                         +"\n"+pelicula.get(position).getRelease_date()
                 );
 

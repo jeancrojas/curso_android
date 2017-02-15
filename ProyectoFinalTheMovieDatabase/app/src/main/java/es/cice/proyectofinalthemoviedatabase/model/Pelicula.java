@@ -10,19 +10,23 @@ public class Pelicula {
     public static final String BASE_URL_IMAGE = "https://image.tmdb.org/t/p/w500";
     public static final String POPULAR = "https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES";
     public static final String EN_CARTELERA_HOY ="https://api.themoviedb.org/3/movie/now_playing?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES";
+    public static final String MEJOR_VALORADAS = "https://api.themoviedb.org/3/movie/top_rated?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES";
+    public static final String PROXIMAMENTE ="https://api.themoviedb.org/3/movie/upcoming?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES";
 
     int id;
     String original_title;
     Bitmap image;
     String release_date;
+    String overview;
     double vote_average;
 
-    public Pelicula(int id, Bitmap image, String release_date, String original_title, double vote_average) {
+    public Pelicula(int id, Bitmap image, String release_date, String original_title, double vote_average, String overview) {
         this.id = id;
         this.image = image;
         this.release_date = release_date;
         this.original_title = original_title;
         this.vote_average = vote_average;
+        this.overview = overview;
     }
 
     public Bitmap getImage() {
@@ -72,6 +76,7 @@ public class Pelicula {
                 "\nTítulo='" + original_title +
                 "\nImagen=" + image +
                 "\nFecha de Lanzamiento='" + release_date +
-                "\nVotación=" + vote_average;
+                "\nVotación=" + vote_average+
+                "\nSinopsis=" + overview;
     }
 }

@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,6 +47,10 @@ public class HiloPeliculas extends Thread {
 
     }
 
+    public Pelicula obtenerPelicula(int index){
+        return pelicula.get(index);
+    }
+
     @Override
     public void run() {
         super.run();
@@ -57,6 +63,8 @@ public class HiloPeliculas extends Thread {
             while ((line = bufferedReader.readLine()) != null ){
                 data.append(line);
             }
+            /*Gson gson= new Gson();
+            gson.fromJson(bufferedReader, modelo.class)*/
 
             JSONObject jsonObject = new JSONObject(data.toString());
             JSONArray results = jsonObject.getJSONArray("results");
@@ -66,15 +74,17 @@ public class HiloPeliculas extends Thread {
                 int id = Integer.parseInt( jsonMovie.getString("id") );
                 String original_title = jsonMovie.getString("original_title");
 
-                URL urlImage = new URL(Pelicula.BASE_URL_IMAGE+jsonMovie.getString("poster_path"));
-                Bitmap image = BitmapFactory.decodeStream(urlImage.openConnection().getInputStream());
+
+                String urlImage = Pelicula.BASE_URL_IMAGE+jsonMovie.getString("poster_path");
+                URL url = new URL(urlImage);
+                Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
                 String release_date = jsonMovie.getString("release_date");
                 double vote_average = Double.parseDouble(jsonMovie.getString("vote_average"));
 
                 String overview = jsonMovie.getString("overview");
 
-                pelicula.add(new Pelicula(id, image, release_date,original_title,vote_average, overview));
+                pelicula.add(new Pelicula(id, image, urlImage, release_date,original_title,vote_average, overview));
             }
 
             /*

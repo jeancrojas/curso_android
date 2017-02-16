@@ -18,11 +18,20 @@ public class Pelicula {
     Bitmap image;
     String release_date;
     String overview;
+    String urlImage;
+
+
+
     double vote_average;
 
-    public Pelicula(int id, Bitmap image, String release_date, String original_title, double vote_average, String overview) {
+    public String getOverview() {
+        return overview;
+    }
+
+    public Pelicula(int id, Bitmap image, String urlImage, String release_date, String original_title, double vote_average, String overview) {
         this.id = id;
         this.image = image;
+        this.urlImage = urlImage;
         this.release_date = release_date;
         this.original_title = original_title;
         this.vote_average = vote_average;
@@ -67,6 +76,10 @@ public class Pelicula {
 
     public void setVote_average(double vote_average) {
         this.vote_average = vote_average;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package es.cice.proyectofinalthemoviedatabase;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -87,12 +89,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             estiloTextView(textViewSubtituloPopular);
 
 
-            HiloPeliculas hiloPopular = new HiloPeliculas(Pelicula.POPULAR);
+            final HiloPeliculas hiloPopular = new HiloPeliculas(Pelicula.POPULAR);
             hiloPopular.start();
             try {
                 hiloPopular.join();
                 listaPeliculas = new ListaPeliculas(this, hiloPopular.getPelicula());
                 listViewLista.setAdapter(listaPeliculas);
+                listViewLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        //Log.d(TAG,"posicion: "+position);
+
+                        Log.d(TAG,"Información de la Pelicula: \n"+hiloPopular.getPelicula().get(position).toString() );
+                        Intent intent = new Intent(MainActivity.this ,MostrarPelicula.class);
+
+                        intent.putExtra("release_date",hiloPopular.getPelicula().get(position).getRelease_date() );
+                        intent.putExtra("original_title", hiloPopular.getPelicula().get(position).getTitle());
+                        intent.putExtra("vote_average",hiloPopular.getPelicula().get(position).getVote_average() );
+                        intent.putExtra("overview",hiloPopular.getPelicula().get(position).getOverview() );
+                        intent.putExtra("imageURL",hiloPopular.getPelicula().get(position).getUrlImage());
+
+                        startActivity(intent);
+
+                    }
+                });
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

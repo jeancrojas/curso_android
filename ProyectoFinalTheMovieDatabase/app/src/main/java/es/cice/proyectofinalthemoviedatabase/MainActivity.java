@@ -83,9 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //View Tratado con anterioridad
 
 
-        if ( v ==  textViewSubtituloPopular && textViewSubtituloPopular.getCurrentTextColor() != Integer.parseInt("-256") ) {
+        if (v == textViewSubtituloPopular && textViewSubtituloPopular.getCurrentTextColor() != Integer.parseInt("-256")) {
             Snackbar.make(v, "Popular", Snackbar.LENGTH_SHORT).show();
-
             estiloTextView(textViewSubtituloPopular);
 
 
@@ -98,16 +97,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 listViewLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        //Log.d(TAG,"posicion: "+position);
+                        Intent intent = new Intent(MainActivity.this, MostrarPelicula.class);
 
-                        Log.d(TAG,"Información de la Pelicula: \n"+hiloPopular.getPelicula().get(position).toString() );
-                        Intent intent = new Intent(MainActivity.this ,MostrarPelicula.class);
-
-                        intent.putExtra("release_date",hiloPopular.getPelicula().get(position).getRelease_date() );
+                        intent.putExtra("release_date", hiloPopular.getPelicula().get(position).getRelease_date());
                         intent.putExtra("original_title", hiloPopular.getPelicula().get(position).getTitle());
-                        intent.putExtra("vote_average",hiloPopular.getPelicula().get(position).getVote_average() );
-                        intent.putExtra("overview",hiloPopular.getPelicula().get(position).getOverview() );
-                        intent.putExtra("imageURL",hiloPopular.getPelicula().get(position).getUrlImage());
+                        intent.putExtra("vote_average", String.valueOf(hiloPopular.getPelicula().get(position).getVote_average()));
+                        intent.putExtra("overview", hiloPopular.getPelicula().get(position).getOverview());
+                        intent.putExtra("imageURL", hiloPopular.getPelicula().get(position).getUrlImage());
 
                         startActivity(intent);
 
@@ -121,52 +117,103 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        if ( v ==  textViewSubtituloMejorValoradas && textViewSubtituloMejorValoradas.getCurrentTextColor() != Integer.parseInt("-256") ) {
-            Log.d(TAG, "El color es Mejor Valoradas: "+textViewSubtituloMejorValoradas.getCurrentTextColor() );
+        if (v == textViewSubtituloMejorValoradas && textViewSubtituloMejorValoradas.getCurrentTextColor() != Integer.parseInt("-256")) {
             Snackbar.make(v, "Mejor Valoradas", Snackbar.LENGTH_SHORT).show();
-
             estiloTextView(textViewSubtituloMejorValoradas);
 
-
-            HiloPeliculas hiloMejorValoradas = new HiloPeliculas(Pelicula.MEJOR_VALORADAS);
+            final HiloPeliculas hiloMejorValoradas = new HiloPeliculas(Pelicula.MEJOR_VALORADAS);
             hiloMejorValoradas.start();
             try {
                 hiloMejorValoradas.join();
                 listaPeliculas = new ListaPeliculas(this, hiloMejorValoradas.getPelicula());
                 listViewLista.setAdapter(listaPeliculas);
+
+                //Proceso para la transferencia de datos al Activity "MostrarPelicula"
+                listViewLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(MainActivity.this, MostrarPelicula.class);
+
+                        intent.putExtra("release_date", hiloMejorValoradas.getPelicula().get(position).getRelease_date());
+                        intent.putExtra("original_title", hiloMejorValoradas.getPelicula().get(position).getTitle());
+                        intent.putExtra("vote_average", String.valueOf(hiloMejorValoradas.getPelicula().get(position).getVote_average()));
+                        intent.putExtra("overview", hiloMejorValoradas.getPelicula().get(position).getOverview());
+                        intent.putExtra("imageURL", hiloMejorValoradas.getPelicula().get(position).getUrlImage());
+
+                        startActivity(intent);
+
+                    }
+                });
+
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
 
-        if ( v ==  textViewSubtituloProximamente && textViewSubtituloProximamente.getCurrentTextColor() != Integer.parseInt("-256") ) {
+        if (v == textViewSubtituloProximamente && textViewSubtituloProximamente.getCurrentTextColor() != Integer.parseInt("-256")) {
             Snackbar.make(v, "Proximamente", Snackbar.LENGTH_SHORT).show();
 
             estiloTextView(textViewSubtituloProximamente);
 
-            HiloPeliculas hiloProximamente = new HiloPeliculas(Pelicula.PROXIMAMENTE);
+            final HiloPeliculas hiloProximamente = new HiloPeliculas(Pelicula.PROXIMAMENTE);
             hiloProximamente.start();
             try {
                 hiloProximamente.join();
                 listaPeliculas = new ListaPeliculas(this, hiloProximamente.getPelicula());
                 listViewLista.setAdapter(listaPeliculas);
+
+                //Proceso para la transferencia de datos al Activity "MostrarPelicula"
+                listViewLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(MainActivity.this, MostrarPelicula.class);
+
+                        intent.putExtra("release_date", hiloProximamente.getPelicula().get(position).getRelease_date());
+                        intent.putExtra("original_title", hiloProximamente.getPelicula().get(position).getTitle());
+                        intent.putExtra("vote_average", String.valueOf(hiloProximamente.getPelicula().get(position).getVote_average()));
+                        intent.putExtra("overview", hiloProximamente.getPelicula().get(position).getOverview());
+                        intent.putExtra("imageURL", hiloProximamente.getPelicula().get(position).getUrlImage());
+
+                        startActivity(intent);
+
+                    }
+                });
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-        if ( v ==  textViewSubtituloEnCarteleraHoy && textViewSubtituloEnCarteleraHoy.getCurrentTextColor() != Integer.parseInt("-256")) {
+        if (v == textViewSubtituloEnCarteleraHoy && textViewSubtituloEnCarteleraHoy.getCurrentTextColor() != Integer.parseInt("-256")) {
             Snackbar.make(v, "Cartelera Hoy", Snackbar.LENGTH_SHORT).show();
 
             estiloTextView(textViewSubtituloEnCarteleraHoy);
 
-            HiloPeliculas hiloEnCarteleraHoy = new HiloPeliculas(Pelicula.EN_CARTELERA_HOY);
+            final HiloPeliculas hiloEnCarteleraHoy = new HiloPeliculas(Pelicula.EN_CARTELERA_HOY);
             hiloEnCarteleraHoy.start();
             try {
                 hiloEnCarteleraHoy.join();
                 listaPeliculas = new ListaPeliculas(this, hiloEnCarteleraHoy.getPelicula());
                 listViewLista.setAdapter(listaPeliculas);
+
+                //Proceso para la transferencia de datos al Activity "MostrarPelicula"
+                listViewLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(MainActivity.this, MostrarPelicula.class);
+
+                        intent.putExtra("release_date", hiloEnCarteleraHoy.getPelicula().get(position).getRelease_date());
+                        intent.putExtra("original_title", hiloEnCarteleraHoy.getPelicula().get(position).getTitle());
+                        intent.putExtra("vote_average", String.valueOf(hiloEnCarteleraHoy.getPelicula().get(position).getVote_average()));
+                        intent.putExtra("overview", hiloEnCarteleraHoy.getPelicula().get(position).getOverview());
+                        intent.putExtra("imageURL", hiloEnCarteleraHoy.getPelicula().get(position).getUrlImage());
+
+                        startActivity(intent);
+
+                    }
+                });
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -175,12 +222,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void estiloTextView (TextView actual){
+    public void estiloTextView(TextView actual) {
         actual.setTextColor(Color.YELLOW);
         actual.setBackground(getResources().getDrawable(R.drawable.back));
 
 
-        if ( actual != anterior ) {
+        if (actual != anterior) {
             anterior.setTextColor(Color.WHITE);
             anterior.setBackground(getResources().getDrawable(R.drawable.border_white));
             anterior = actual;
@@ -189,61 +236,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /*
-    Thread slowWorkerThread = new Thread() {
-
-
-
-        @Override
-        public void run() {
-            super.run();
-            try {
-                //url = new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57&language=es-ES");
-                //        new URL("https://api.themoviedb.org/3/movie/popular?api_key=e4190e0e5981362e0722c17cfd44da57");
-
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()));
-                StringBuffer data = new StringBuffer();
-                String line = "";
-
-                while ((line = bufferedReader.readLine()) != null ){
-                    data.append(line);
-                }
-
-                JSONObject jsonObject = new JSONObject(data.toString());
-                JSONArray results = jsonObject.getJSONArray("results");
-
-                for (int i=0; i < results.length();i++) {
-                    JSONObject jsonMovie = results.getJSONObject(i);
-                    int id = Integer.parseInt( jsonMovie.getString("id") );
-                    String original_title = jsonMovie.getString("original_title");
-
-                    URL urlImage = new URL(Pelicula.BASE_URL_IMAGE+jsonMovie.getString("poster_path"));
-                    Bitmap image = BitmapFactory.decodeStream(urlImage.openConnection().getInputStream());
-
-                    String release_date = jsonMovie.getString("release_date");
-                    double vote_average = Double.parseDouble(jsonMovie.getString("vote_average"));
-
-                    pelicula.add(new Pelicula(id, image, release_date,original_title,vote_average));
-                }
-
-
-                for (Pelicula p : pelicula) {
-                    Log.d(TAG, "slowWorkerThread... "+p.toString());
-                }
-
-
-
-
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        }
-    };
-    */
 }

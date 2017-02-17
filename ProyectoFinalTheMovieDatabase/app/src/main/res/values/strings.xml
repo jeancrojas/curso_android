@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ProyectoFinalTheMovieDatabase</string>
-    <string name="titulo">Péliculas</string>
+    <string name="titulo">La Cartelera</string>
     <string name="subtituloPopular">POPULAR</string>
     <string name="subtituloMejorValoradas">MEJOR VALORADAS</string>
     <string name="subtituloProximamente">PRÓXIMAMENTE</string>

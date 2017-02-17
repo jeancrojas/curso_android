@@ -14,16 +14,26 @@
         android:id="@+id/textViewMostrarPeliculaTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuevo Layout"/>
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="normal|bold" />
 
     <TextView
         android:id="@+id/textViewMostrarPeliculaValoracion"
         android:layout_below="@+id/textViewMostrarPeliculaTitulo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewMostrarPeliculaValoracion">
     <LinearLayout
-        android:layout_below="@+id/textViewMostrarPeliculaValoracion"
+
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -32,12 +42,16 @@
             android:id="@+id/imageViewMostrarPeliculaImagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/textViewMostrarPeliculaDescripcion"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"/>
     </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

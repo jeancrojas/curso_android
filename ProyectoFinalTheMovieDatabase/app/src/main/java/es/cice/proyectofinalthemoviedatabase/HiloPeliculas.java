@@ -84,7 +84,7 @@ public class HiloPeliculas extends Thread {
 
                 String overview = jsonMovie.getString("overview");
 
-                pelicula.add(new Pelicula(id, image, urlImage, release_date,original_title,vote_average, overview));
+                pelicula.add(new Pelicula(id, Bitmap.createScaledBitmap(image,180,270, false), urlImage, release_date,original_title,vote_average, overview));
             }
 
             /*

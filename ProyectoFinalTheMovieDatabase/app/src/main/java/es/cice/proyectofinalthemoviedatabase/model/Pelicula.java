@@ -19,8 +19,11 @@ public class Pelicula {
     String release_date;
     String overview;
     String urlImage;
+    String backdrop_path;
 
-
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
 
     double vote_average;
 
@@ -28,7 +31,7 @@ public class Pelicula {
         return overview;
     }
 
-    public Pelicula(int id, Bitmap image, String urlImage, String release_date, String original_title, double vote_average, String overview) {
+    public Pelicula(int id, Bitmap image, String urlImage, String backdrop_path , String release_date, String original_title, double vote_average, String overview) {
         this.id = id;
         this.image = image;
         this.urlImage = urlImage;
@@ -36,6 +39,7 @@ public class Pelicula {
         this.original_title = original_title;
         this.vote_average = vote_average;
         this.overview = overview;
+        this.backdrop_path = backdrop_path;
     }
 
     public Bitmap getImage() {

@@ -79,12 +79,14 @@ public class HiloPeliculas extends Thread {
                 URL url = new URL(urlImage);
                 Bitmap image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 
+                String backdrop_path = Pelicula.BASE_URL_IMAGE+jsonMovie.getString("backdrop_path");
+
                 String release_date = jsonMovie.getString("release_date");
                 double vote_average = Double.parseDouble(jsonMovie.getString("vote_average"));
 
                 String overview = jsonMovie.getString("overview");
 
-                pelicula.add(new Pelicula(id, Bitmap.createScaledBitmap(image,180,270, false), urlImage, release_date,original_title,vote_average, overview));
+                pelicula.add(new Pelicula(id, Bitmap.createScaledBitmap(image,180,270, false), urlImage, backdrop_path, release_date,original_title,vote_average, overview));
             }
 
             /*

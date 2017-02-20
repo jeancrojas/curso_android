@@ -99,11 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(MainActivity.this, MostrarPelicula.class);
 
-                        intent.putExtra("release_date", hiloPopular.getPelicula().get(position).getRelease_date());
-                        intent.putExtra("original_title", hiloPopular.getPelicula().get(position).getTitle());
-                        intent.putExtra("vote_average", String.valueOf(hiloPopular.getPelicula().get(position).getVote_average()));
-                        intent.putExtra("overview", hiloPopular.getPelicula().get(position).getOverview());
-                        intent.putExtra("imageURL", hiloPopular.getPelicula().get(position).getUrlImage());
+                        intent.putExtra("release_date", hiloPopular.getPelicula().get(position).getRelease_date() );
+                        intent.putExtra("original_title", hiloPopular.getPelicula().get(position).getTitle() );
+                        intent.putExtra("vote_average", String.valueOf(hiloPopular.getPelicula().get(position).getVote_average()) );
+                        intent.putExtra("overview", hiloPopular.getPelicula().get(position).getOverview() );
+                        intent.putExtra("imageURL", hiloPopular.getPelicula().get(position).getUrlImage() );
+                        intent.putExtra("backdrop_path", hiloPopular.getPelicula().get(position).getBackdrop_path() );
 
                         startActivity(intent);
 
@@ -139,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.putExtra("vote_average", String.valueOf(hiloMejorValoradas.getPelicula().get(position).getVote_average()));
                         intent.putExtra("overview", hiloMejorValoradas.getPelicula().get(position).getOverview());
                         intent.putExtra("imageURL", hiloMejorValoradas.getPelicula().get(position).getUrlImage());
+                        intent.putExtra("backdrop_path", hiloMejorValoradas.getPelicula().get(position).getBackdrop_path() );
 
                         startActivity(intent);
 
@@ -175,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.putExtra("vote_average", String.valueOf(hiloProximamente.getPelicula().get(position).getVote_average()));
                         intent.putExtra("overview", hiloProximamente.getPelicula().get(position).getOverview());
                         intent.putExtra("imageURL", hiloProximamente.getPelicula().get(position).getUrlImage());
+                        intent.putExtra("backdrop_path", hiloProximamente.getPelicula().get(position).getBackdrop_path() );
 
                         startActivity(intent);
 
@@ -208,6 +211,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         intent.putExtra("vote_average", String.valueOf(hiloEnCarteleraHoy.getPelicula().get(position).getVote_average()));
                         intent.putExtra("overview", hiloEnCarteleraHoy.getPelicula().get(position).getOverview());
                         intent.putExtra("imageURL", hiloEnCarteleraHoy.getPelicula().get(position).getUrlImage());
+                        intent.putExtra("backdrop_path", hiloEnCarteleraHoy.getPelicula().get(position).getBackdrop_path() );
 
                         startActivity(intent);
 

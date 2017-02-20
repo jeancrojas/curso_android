@@ -10,48 +10,63 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="es.cice.proyectofinalthemoviedatabase.MostrarPelicula">
 
-    <TextView
-        android:id="@+id/textViewMostrarPeliculaTitulo"
+    <ImageView
+        android:id="@+id/imageViewMostrarPeliculaFondo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:textStyle="normal|bold" />
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="fitXY" />
 
-    <TextView
-        android:id="@+id/textViewMostrarPeliculaValoracion"
-        android:layout_below="@+id/textViewMostrarPeliculaTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="18sp"
-        android:textStyle="normal|bold" />
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewMostrarPeliculaValoracion">
-    <LinearLayout
+        android:layout_marginTop="150dp">
 
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imageViewMostrarPeliculaImagen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/textViewMostrarPeliculaDescripcion"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"/>
-    </LinearLayout>
-    </ScrollView>
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
 
+
+            <ImageView
+                android:id="@+id/imageViewMostrarPeliculaImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textViewMostrarPeliculaTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:id="@+id/textViewMostrarPeliculaValoracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="18sp"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:id="@+id/textViewMostrarPeliculaDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
 
 </RelativeLayout>

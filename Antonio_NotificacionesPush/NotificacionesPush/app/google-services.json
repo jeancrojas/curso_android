@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "572021555934",
+    "project_id": "cicepush"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572021555934:android:3697ae77f43eeeb5",
+        "android_client_info": {
+          "package_name": "es.cice.notificacionespush"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO8XgKFkPo2DYhWyX5aHepre6z8odHR_g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
